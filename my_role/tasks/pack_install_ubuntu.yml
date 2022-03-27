@@ -1,0 +1,13 @@
+- name: install packages
+  apt:
+   name:
+     - "{{pack_git1}}"
+     - "{{pack_java1}}"
+     - "{{pack_maven1}}"
+     - "{{pack_tomcat1}}"
+- name: Start Tomcat Service	
+  service:
+     name: tomcat8
+     state: started
+     enabled: yes
+

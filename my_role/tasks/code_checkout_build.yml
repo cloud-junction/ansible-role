@@ -1,0 +1,10 @@
+- name: Checkout Repository from git
+  git:
+      repo: https://github.com/MahadevDevops/Maven_Web.git
+      dest: /opt/my-code
+      version: HEAD
+- name: Build Code
+  command: mvn clean install
+  args:
+    chdir: /opt/my-code
+

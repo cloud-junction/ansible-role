@@ -1,0 +1,7 @@
+pack_git1: git
+pack_java1: openjdk-8-jdk
+pack_maven1: maven
+pack_tomcat1: tomcat8
+utpath: /var/lib/tomcat8/conf/server.xml
+ctpath: /etc/tomcat/server.xml
+

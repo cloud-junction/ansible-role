@@ -1,0 +1,9 @@
+- include: pack_install_redhat.yml
+  when: ansible_distribution=='CentOS'
+- include: pack_install_ubuntu.yml
+  when: ansible_distribution=='Ubuntu'
+- include: code_checkout_build.yml
+- include: copy_template.yml
+- include: deploy_webapp.yml
+  #- include: deploy_sample_war.yml
+

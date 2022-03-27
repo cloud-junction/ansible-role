@@ -1,0 +1,6 @@
+pack_git: git-core
+pack_java: java-1.8.0-openjdk
+pack_maven: maven
+pack_tomcat: tomcat
+tport: 8090
+

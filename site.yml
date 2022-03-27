@@ -1,0 +1,11 @@
+- hosts: all
+  remote_user: root
+  gather_facts: yes
+  tasks:
+   - name: Testing the Role functionality
+     debug:
+      msg: Hello we are testing Role
+  roles:
+   - role: my_role
+     become: yes
+

@@ -1,0 +1,21 @@
+- name: Download sample war file
+  get_url:
+     url: https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war
+     dest: /root/Roles/my_role/files
+     mode: '777'
+  delegate_to: 127.0.0.1
+
+- name: Deploy web application on tomcat for Ubuntu
+  copy:
+    src: sample.war
+    dest: /var/lib/tomcat8/webapps
+    mode: '777'
+  when: ansible_distribution=="Ubuntu"
+
+- name: Deploy web application on tomcat for CentOS
+  copy:
+    src: sample.war
+    dest: /var/lib/tomcat/webapps
+    mode: '777'
+  when: ansible_distribution=="CentOS"
+

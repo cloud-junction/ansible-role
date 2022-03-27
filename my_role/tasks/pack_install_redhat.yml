@@ -1,0 +1,15 @@
+- name: install packages
+  yum:
+   name:
+     - "{{pack_git}}"
+     - "{{pack_java}}"
+     - "{{pack_maven}}"
+     - "{{pack_tomcat}}"
+     - tomcat-webapps
+     - tomcat-admin-webapps
+- name: Start Tomcat Service
+  service:
+     name: tomcat
+     state: started
+     enabled: yes
+

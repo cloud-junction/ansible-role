@@ -1,0 +1,13 @@
+- name: Deploy Web app to Ubuntu Server
+  command:
+     cp /opt/my-code/target/my-app-web.war /var/lib/tomcat8/webapps
+  when: ansible_distribution=='Ubuntu'
+  notify:
+    - start tomcat8
+- name: Deploy Web app to CentOS Server
+  command:
+       cp /opt/my-code/target/my-app-web.war /var/lib/tomcat/webapps
+  when: ansible_distribution=='CentOS'
+  notify:
+    - start tomcat
+

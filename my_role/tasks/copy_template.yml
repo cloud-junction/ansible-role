@@ -1,0 +1,18 @@
+- name: Copy server config file to change port for CentOS
+  template:
+   src: server.j2
+   dest: "{{ctpath}}"
+   mode: '777'
+  when: ansible_distribution=='CentOS'
+  notify:
+    - start tomcat
+
+- name: Copy server config file to change port for Ubuntu
+  template:
+   src: server.j2
+   dest: "{{utpath}}"
+   mode: '777'
+  when: ansible_distribution=='Ubuntu'
+  notify:
+    - start tomcat8
+
